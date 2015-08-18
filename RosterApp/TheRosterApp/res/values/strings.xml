@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">The Roster App</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="lblTitle">The Roster</string>
+    <string name="TheRoster">The Roster</string>
+    <string name="Name">Name</string>
+    <string name="chkmsg">Thinks We Are Going Steady</string>
+    <string name="Save">Save</string>
+    <string name="birthdate">Set BirthDate</string>
+    <string name="XS">XS</string>
+    <string name="S">S</string>
+    <string name="DOB">Select BirthDate</string>
+    <string name="lblSize">Select Size</string>
+    <string name="M">M</string>
+    <string name="L">L</string>
+    <string name="XL">XL</string>
+    <string name="XXL">XXL</string>
+    <string name="EyeColor">Select Eye Color</string>
+    <string name="PantSize">Select Pant Size</string>
+    <string name="ShirtSize">Select Shirt Size</string>
+    <string name="ShoeSize">Select Shoe Size</string>
+    <string name="DisplayPantSize">0</string>
+    <string name="DisplayShirtSize">0</string>
+    <string name="DisplayShoeSize">0</string>
+
+</resources>

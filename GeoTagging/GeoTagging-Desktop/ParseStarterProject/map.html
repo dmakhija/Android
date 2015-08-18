@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Map</title>
+       
+    <!-- Google Maps API reference -->
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization">
+    </script>
+    
+    <script src="/lib/parse-1.4.2.js"></script>
+
+    <!-- mapframe references  -->
+    <link href="/map.css" rel="stylesheet" />
+
+    <script>
+
+    var APPLICATION_ID = "YoqCAzZdCM3mLjPdcfBA32ZIlMqEJJ8jkmNFHCYa";
+    var JAVASCRIPT_KEY = "PA63YUlxqLCZl0wHjYF7hrNZQAydkzVn2Yhm3ui6";
+    var CLASS_NAME = "MyLocation";
+    var CoorinatesArray=[];
+    var MarkersArray=[];
+
+
+    var map;
+    var myCenter = new google.maps.LatLng(43.4359863, -80.4376289);
+    var infoWindow;
+
+    //this function initializes the google map
+    function Initialize()
+    {        
+        CenterMap(myCenter);        
+
+        // Initialize Parse with your Application ID and JavaScript key from the
+        // Parse dashboard.
+        //Parse.initialize("YoqCAzZdCM3mLjPdcfBA32ZIlMqEJJ8jkmNFHCYa", "PA63YUlxqLCZl0wHjYF7hrNZQAydkzVn2Yhm3ui6");
+
+        Parse.initialize(APPLICATION_ID, JAVASCRIPT_KEY);
+        GetCoordinates(CLASS_NAME);
+    }
+
+    //this function centers the map at the given position.
+    function CenterMap(myCenter)
+    {
+        map = new google.maps.Map(document.getElementById('mapdisplay'),
+            {
+                zoom: 15,
+                center: myCenter,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+                //.TERRAIN
+            });
+    }
+
+    //this function gets the coordinates from the cloud
+    function GetCoordinates(CLASS_NAME)
+    {        
+        var LocationObject = Parse.Object.extend(CLASS_NAME);
+        var query = new Parse.Query(LocationObject);
+        query.descending('TimeStamp');
+        query.find({
+            success: function (results)
+            {
+                if (results.length > 0)
+                {
+                    CoorinatesArray = new Array();
+                    // The object was retrieved successfully.
+                    for (var i = 0; i < results.length; i++)
+                    {
+                        var obj = results[i];
+                        var lat = obj.get("Latitude");
+                        var lon = obj.get("Longitude");
+                        var time = obj.get("TimeStamp");
+                        if (lat != null && lat != "0" && lat != 0)
+                        {
+                            if (lon != null && lon != "0" && lon != 0)
+                            {
+                                CoorinatesArray[i] = { latitude: lat, longitude: lon, timestamp: time };                                
+                            }                            
+                        }
+                    }
+                    AddMarkers(CoorinatesArray);
+                }
+            },
+            error: function (error)
+            {
+                CoorinatesArray=new Array();
+            }
+        });
+    }
+
+    //this function adds the marker on the map for each coordinate data collected from the cloud
+    function AddMarkers(dataresults)
+    {
+        ResetMarkers(MarkersArray);
+        for (var i = 0; i < dataresults.length; i++)
+        {
+            var coordinate = dataresults[i];
+            var lat = coordinate["latitude"];
+            var lon = coordinate["longitude"];
+            var time = coordinate["timestamp"];
+            var latLong = new google.maps.LatLng(lat, lon);
+            var myIcon = 'images/marker.png';
+            if (i == 0)
+            {
+                //display the latest coordinate with pink marker
+                myIcon = 'images/pink.png';
+            }
+            else
+            {
+                //display all other coordinates with blue marker
+                myIcon = 'images/blue.png';
+            }
+
+            var marker = new google.maps.Marker({
+                position: latLong,
+                map: map,
+                animation: google.maps.Animation.BOUNCE,
+                icon: myIcon
+            });
+            MarkersArray.push(marker);
+            var mycontent = GetContent(lat, lon, time);
+            infoWindow = new google.maps.InfoWindow;
+            BindInfoWindow(marker, map, infoWindow, mycontent);
+        }
+
+        //sets the timer to get coordinates from cloud after every 15 seconds
+        setTimeout(function ()
+        {
+            GetCoordinates(CLASS_NAME);
+        }, 15000);
+    }
+
+    function BindInfoWindow(marker, map, infoWindow, html)
+    {
+        //binds the info window to the marker on mouseover event
+        google.maps.event.addListener(marker, 'mouseover', function () {
+            infoWindow.setContent(html);
+            infoWindow.open(map, marker);
+        });
+
+        //unbinds the info window from the marker on mouseout event
+        google.maps.event.addListener(marker, 'mouseout', function () {
+            infoWindow.close();
+        });
+    }
+
+    //this function resets the markers array and removes old markers from the map.
+    function ResetMarkers(arr)
+    {        
+       for (var i = 0; i < arr.length; i++)
+       {
+           arr[i].setMap(null);
+       }
+       arr = [];
+    }
+
+    //converts timestamp string into date time format as (YYYY-MM-DD HH:MM:SS)
+    function FormatDate(timestamp)
+    {        
+        var d = new Date(parseFloat(timestamp));
+        return d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate()+" "+d.getHours()+" : "+d.getMinutes() +" : "+d.getSeconds();
+    }
+
+    //this function accepts 3 string variables from location object        
+    //creates a div element with each of these variables in the p tag.
+    //this div tag is used as a content for infowindow for each variable
+    function GetContent(lat, lon, time)
+    {        
+        var mytime=FormatDate(time);
+        var html = "<div><p><b><span style='color: #008000;'>Latitude: </span><span style='color: #800080;'>" + lat + "</span></b></p>" +
+            "<p><b><span style='color: #008000;'>Longitude: </span><span style='color: #800080;'>" + lon + "</span></b></p>" +
+            "<p><b><span style='color: #008000;'>Time: </span><span style='color: #800080;'>" + mytime + "</span></b></p></div>"
+        return html;
+    }
+
+     google.maps.event.addDomListener(window, 'load', Initialize);
+
+    </script>
+
+</head>
+
+<body>
+        <div id="mapdisplay"></div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DURGA</Machine>
+    <WindowsUser>ampm</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>0a1f4914-9e0d-4e45-bd72-f5169daff8e4</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\bld\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>F33A38FAE9FA7E9C1DC0F66148011D02A1D74F8971C20C198976C0C02CD18ED2</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>0a1f4914-9e0d-4e45-bd72-f5169daff8e4_1.1.0.0_neutral__ywwvhtjmx9rt8</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>0a1f4914-9e0d-4e45-bd72-f5169daff8e4_ywwvhtjmx9rt8!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>0a1f4914-9e0d-4e45-bd72-f5169daff8e4</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=David</RegisteredPackagePublisher>
+    <RegisteredVersion>1.1.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-29T19:58:28.089</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\default.html">
+      <PackagePath>default.html</PackagePath>
+      <Modified>2015-06-29T19:58:25.266</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\map.html">
+      <PackagePath>map.html</PackagePath>
+      <Modified>2015-06-29T19:10:29.904</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\images\blue.png">
+      <PackagePath>images\blue.png</PackagePath>
+      <Modified>2015-06-27T04:13:52.382</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\images\logo.png">
+      <PackagePath>images\logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-23T14:42:53.621</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\images\overlay.png">
+      <PackagePath>images\overlay.png</PackagePath>
+      <Modified>2015-06-23T02:48:50.880</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\images\pink.png">
+      <PackagePath>images\pink.png</PackagePath>
+      <Modified>2015-06-27T04:10:20.656</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\images\smalllogo.png">
+      <PackagePath>images\smalllogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-23T14:42:53.653</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\images\splashscreen.png">
+      <PackagePath>images\splashscreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-23T14:42:53.681</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\images\storelogo.png">
+      <PackagePath>images\storelogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-23T14:42:53.716</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+      <Modified>2015-06-27T03:49:41.389</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\lib\parse-1.4.2.js">
+      <PackagePath>lib\parse-1.4.2.js</PackagePath>
+      <Modified>2015-06-23T14:42:54.020</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2015-06-29T19:57:44.400</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\map.css">
+      <PackagePath>map.css</PackagePath>
+      <Modified>2015-06-23T15:12:37.998</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ampm\Desktop\GeoTagging\GeoTagging\ParseStarterProject\bin\Debug\ReverseMap\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-06-29T19:58:27.323</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\">
+      <Name>Microsoft.WinJS.2.0</Name>
+      <Version>1.0.9600.17018</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.WinJS.2.0, MinVersion=1.0.9600.17018</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\Microsoft.WinJS.2.0.appx</AppxLocation>
+      <MoreInfo>http://go.microsoft.com/fwlink/%3fLinkId=260891</MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

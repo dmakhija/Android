@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="parse_app_id">YoqCAzZdCM3mLjPdcfBA32ZIlMqEJJ8jkmNFHCYa</string>
+    <string name="parse_client_key">qRkySLLp6txa0kHzHpYOxxmnDp2X1rWnd4N2Vxt5</string>
+        <!--  YOUR_APPLICATION_ID
+              YOUR_CLIENT_KEY -->
+
+    <string name="hello">Hello World, ParseStarterProjectActivity!</string>
+    <string name="lbl_latitude">Latitude:</string>        
+    <string name="lbl_longitude">Longitude:</string>
+     <string name="lbl_time">TimeStamp:</string>
+     
+     <string name="txt_latitude">-</string>    
+    <string name="txt_longitude">-</string>
+     <string name="txt_time">-</string>
+    <string name="app_name">GeoTagging</string>
+</resources>
